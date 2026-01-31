@@ -20,7 +20,7 @@ class MovieController extends Controller
         $movie = Movie::with('screenings')->find($id);
 
         if (!$movie) {
-            return response()->json(['message' => 'Movie with id '.$id.' not found!'], 404);
+            return response()->json(['message' => 'Movie not found'], 404);
         }
 
         return response()->json($movie);
